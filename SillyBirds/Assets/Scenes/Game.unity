@@ -121,6 +121,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 385332076}
+  - component: {fileID: 385332078}
+  - component: {fileID: 385332077}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -141,6 +143,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385332077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385332075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1897d14831c58d041bffdc6cfd6a1f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amountToPool: 15
+  _objectsToPool:
+  - {fileID: 1200658626674364, guid: 0e82c5c091ad2fc4fb8f62cd247366b0, type: 2}
+  - {fileID: 1305410896935532, guid: 55643d327a754064cad3bd7332b64918, type: 2}
+  - {fileID: 1005596225482618, guid: d270d501bba60a743a70a660f7b8362e, type: 2}
+  - {fileID: 1936123042467916, guid: 2c24257c9419022408731754f06cab26, type: 2}
+  - {fileID: 1278971743228858, guid: 7f1b15a950b00f64897c8a9487a51856, type: 2}
+  - {fileID: 1584920402250918, guid: 87d0f0329c585694c86a423f397464cd, type: 2}
+  - {fileID: 1085749297350262, guid: c1cd48bc69f4d4c4097dba6dbc7b7b8a, type: 2}
+  - {fileID: 1848137776097506, guid: cf186dbfedf37204297cdbf7950214d2, type: 2}
+  - {fileID: 1814968513715076, guid: 01c6a86f221f2f641a5dedc66f6241a6, type: 2}
+  - {fileID: 1715656802159138, guid: 2b68d0134312d0e4880d1f818cc45fc7, type: 2}
+--- !u!114 &385332078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385332075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918110339ee24a24db347083f420e017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &886970862
 GameObject:
   m_ObjectHideFlags: 0
