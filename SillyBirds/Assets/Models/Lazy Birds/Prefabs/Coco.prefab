@@ -50,6 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4842255124326478}
   - component: {fileID: 95803485298008796}
+  - component: {fileID: 114235852782211266}
   m_Layer: 0
   m_Name: Coco
   m_TagString: Untagged
@@ -224,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 1305410896935532}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4490829666361420}
   - {fileID: 4073893265022172}
@@ -261,6 +262,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114235852782211266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1305410896935532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb54e0418f0c4143b721c9ba20b994d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 3
 --- !u!137 &137223448740180206
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
