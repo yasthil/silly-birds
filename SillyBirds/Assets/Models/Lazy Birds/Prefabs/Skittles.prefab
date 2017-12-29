@@ -49,11 +49,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4833312397408520}
+  - component: {fileID: 114009846689881524}
   - component: {fileID: 95945733994149192}
   - component: {fileID: 114918901409236244}
+  - component: {fileID: 114315477490442358}
+  - component: {fileID: 135513848443412856}
+  - component: {fileID: 54268901418306032}
   m_Layer: 0
   m_Name: Skittles
-  m_TagString: Untagged
+  m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,6 +191,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54268901418306032
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715656802159138}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!95 &95945733994149192
 Animator:
   serializedVersion: 3
@@ -204,6 +223,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114009846689881524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715656802159138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e852af6ec0b854abb7a29338d6b977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amplitude: 0.05
+  _speed: 5
+--- !u!114 &114315477490442358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715656802159138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114918901409236244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,6 +259,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+--- !u!135 &135513848443412856
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715656802159138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Center: {x: 0, y: 0.12, z: 0.01}
 --- !u!137 &137930977498528178
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
