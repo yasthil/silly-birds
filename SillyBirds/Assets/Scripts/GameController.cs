@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,8 +32,6 @@ public class GameController : MonoBehaviour {
     private IEnumerator SpawnBirds()
     {
         GameObject sillyBird = null;
-        float randomBirdYPos;
-        float randomBirdXPos;
 
         // game loop - this should be more performant than using Update() on every frame
         while (_gameRunning)
@@ -40,12 +39,9 @@ public class GameController : MonoBehaviour {
             sillyBird = ObjectPooler.Instance.GetPooledObject();
             if (sillyBird != null)
             {
-                // get a random X and Y positions that's within some bounds
-                randomBirdYPos = UnityEngine.Random.Range(BIRD_SPAWN_MIN_Y_POS, BIRD_SPAWN_MAX_Y_POS);
-                randomBirdXPos = UnityEngine.Random.Range(BIRD_SPAWN_MIN_X_POS, BIRD_SPAWN_MAX_X_POS);
-
                 // set the bird's position
-                sillyBird.transform.position = new Vector3(randomBirdXPos, randomBirdYPos, _spawnPositionZ);
+                sillyBird.transform.position = CalcSpawnPositions();
+                sillyBird.transform.eulerAngles = CalcSpawnRotations(sillyBird);
 
                 // set it to active
                 sillyBird.SetActive(true);
@@ -55,6 +51,51 @@ public class GameController : MonoBehaviour {
             // TODO: Have a min, max spawn range and randomly choose from there
             yield return new WaitForSeconds(2);
         }
+    }
+
+    /// <summary>
+    /// Based on the location of the bird, determines how to rotate the bird
+    /// </summary>
+    /// <returns></returns>
+    private Vector3 CalcSpawnRotations(GameObject sillyBird)
+    {
+        Vector3 angles;
+        if (sillyBird.transform.position.x < 0)
+        {
+            // rotate to face right side
+            angles = new Vector3(0, 90, 0);
+        }
+        else
+        {
+            // rotate to face left side
+            angles = new Vector3(0, 270, 0);
+        }
+        return angles;
+    }
+
+    /// <summary>
+    /// Calculates the spawn positions for the birds
+    /// </summary>
+    /// <returns></returns>
+    private Vector3 CalcSpawnPositions()
+    {
+        float randomBirdYPos;
+        float randomBirdXPos;
+        // get a random X and Y positions that's within some bounds
+        randomBirdYPos = UnityEngine.Random.Range(BIRD_SPAWN_MIN_Y_POS, BIRD_SPAWN_MAX_Y_POS);
+
+        // we need to position them off screen to then can fly in
+        if (UnityEngine.Random.value > 0.5f)
+        {
+            // move right to left
+            randomBirdXPos = BIRD_SPAWN_MIN_X_POS;
+        }
+        else
+        {
+            // move left to right
+            randomBirdXPos = BIRD_SPAWN_MAX_X_POS;
+        }
+        return new Vector3(randomBirdXPos, randomBirdYPos, _spawnPositionZ);
     }
 	
 }
