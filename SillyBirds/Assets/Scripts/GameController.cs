@@ -11,8 +11,8 @@ public class GameController : MonoBehaviour {
     private bool _gameRunning;
     private const float BIRD_SPAWN_MIN_Y_POS = -3.9f;
     private const float BIRD_SPAWN_MAX_Y_POS = 3.7f;
-    private const float BIRD_SPAWN_MIN_X_POS = -14f;
-    private const float BIRD_SPAWN_MAX_X_POS = 14f;
+    private const float BIRD_SPAWN_MIN_X_POS = -20f;
+    private const float BIRD_SPAWN_MAX_X_POS = 20f;
 
     // some defaults spawn positions
     private float _spawnPositionX = 0f;        
