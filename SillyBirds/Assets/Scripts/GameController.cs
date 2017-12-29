@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
     // some defaults spawn positions
     private float _spawnPositionX = 0f;        
     private float _spawnPositionY = 0f;        
-    private float _spawnPositionZ = -60f;       // set the z-order so we know exactly how far from the camera they should be
+    private float _spawnPositionZ = -40f;       // set the z-order so we know exactly how far from the camera they should be
 
     // Use this for initialization
     void Start () {
