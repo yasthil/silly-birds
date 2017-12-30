@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -9,37 +11,85 @@ using UnityEngine.UI;
 /// </summary>
 public class GameController : MonoBehaviour
 {
+    // constants
+    private const int GAME_OVER_SCENE_INDEX = 2;
 
     // public vars
-    public Text _scoreText;
+    public GameObject _scoreText;
+    public GameObject _timerText;
+    public int _timerDuration;
+    public static GameController SharedInstance;
+    public float _obstableSpawnIntervalMin;
+    public float _obstableSpawnIntervalMax;
 
     private int _score;
+    private float _timer;
+    private bool _timerStarted;
     private bool _gameRunning;
-    private const float BIRD_SPAWN_MIN_Y_POS = -10f;
-    private const float BIRD_SPAWN_MAX_Y_POS = 10f;
-    private const float BIRD_SPAWN_MIN_X_POS = -20f;
-    private const float BIRD_SPAWN_MAX_X_POS = 20f;
+    private const float BIRD_SPAWN_MIN_Y_POS = -7.1f;
+    private const float BIRD_SPAWN_MAX_Y_POS = 6.1f;
+    private const float BIRD_SPAWN_MIN_X_POS = -16f;
+    private const float BIRD_SPAWN_MAX_X_POS = 16f;
 
     // some defaults spawn positions
     private float _spawnPositionX = 0f;
     private float _spawnPositionY = 0f;
     private float _spawnPositionZ = -40f;       // set the z-order so we know exactly how far from the camera they should be
 
+    public int Score
+    {
+        get
+        {
+            return _score;
+        }
+
+        set
+        {
+            _score = value;
+        }
+    }
+
+
+    private void Awake()
+    {
+        SharedInstance = this;
+    }
+
     // Use this for initialization
     void Start()
     {
         _gameRunning = true;
         StartCoroutine(SpawnBirds());
-        StartCoroutine(DisplayScore(0.5f));
+        StartCoroutine(DisplayScore(1f));
+
+        _timerStarted = false;
+        _timer = _timerDuration;
+        StartCoroutine(DisplayTimer(1f));
 
     }
 
-    private IEnumerator DisplayScore(float delay)
+    private IEnumerator DisplayTimer(float delay = 0)
+    {
+        yield return new WaitForSeconds(delay);
+        _timerStarted = true;
+        _timerText.gameObject.SetActive(true);
+        UpdateTimer();
+
+    }
+    private IEnumerator DisplayScore(float delay = 0)
     {
         yield return new WaitForSeconds(delay);
         _score = 0;
         _scoreText.gameObject.SetActive(true);
         UpdateScore();
+    }
+
+    private void UpdateTimer()
+    {
+        if (_gameRunning)
+        {
+            _timerText.GetComponent<TextMeshProUGUI>().text = "Timer: " + _timer;
+        }
     }
 
     /// <summary>
@@ -49,7 +99,7 @@ public class GameController : MonoBehaviour
     {
         if (_gameRunning)
         {
-            _scoreText.text = "Score: " + _score;
+            _scoreText.GetComponent<TextMeshProUGUI>().text = "Score: " + _score;
         }
     }
 
@@ -87,10 +137,8 @@ public class GameController : MonoBehaviour
                 // set it to active
                 sillyBird.SetActive(true);
             }
-
-            // hard coding spawn for every 2 seconds
-            // TODO: Have a min, max spawn range and randomly choose from there
-            yield return new WaitForSeconds(2);
+            
+            yield return new WaitForSeconds(UnityEngine.Random.Range(_obstableSpawnIntervalMin, _obstableSpawnIntervalMax));
         }
     }
 
@@ -139,9 +187,30 @@ public class GameController : MonoBehaviour
         return new Vector3(randomBirdXPos, randomBirdYPos, _spawnPositionZ);
     }
 
+    private void GameOver()
+    {
+        
+    }
 
     private void Update()
     {
+        if (_gameRunning && _timerStarted)
+        {
+            _timer -= Time.deltaTime;
+            int timeLeft = (int)_timer % 60;
+            _timerText.GetComponent<TextMeshProUGUI>().text = "Timer: " + timeLeft;
+
+            if (timeLeft <= 0)
+            {
+                // Game over
+                _gameRunning = false;
+
+                // load game over scene
+                SceneManager.LoadScene(GAME_OVER_SCENE_INDEX);
+            }
+        }
+
+
         // Android specific
         if (Application.platform == RuntimePlatform.Android)
         {

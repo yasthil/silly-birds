@@ -20,7 +20,7 @@ public class ObjectPooler : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             _inActiveObjects = new List<GameObject>();
             return;
         }
