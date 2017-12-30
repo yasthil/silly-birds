@@ -140,7 +140,7 @@ public class GameController : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Android specific
         if (Application.platform == RuntimePlatform.Android)
@@ -154,7 +154,8 @@ public class GameController : MonoBehaviour
                     if (hit.rigidbody != null)
                     {
                         Console.Write("");
-                        Destroy(hit.rigidbody.gameObject);
+                        hit.rigidbody.gameObject.GetComponent<BirdController>().Explode();
+                        hit.rigidbody.gameObject.SetActive(false);
                         AddScore();
                     }
                 }
@@ -172,6 +173,7 @@ public class GameController : MonoBehaviour
                     if (hit.rigidbody != null)
                     {
                         Console.Write("");
+                        hit.rigidbody.gameObject.GetComponent<BirdController>().Explode();
                         hit.rigidbody.gameObject.SetActive(false);
                         AddScore();
                     }
