@@ -140,7 +140,7 @@ public class GameController : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         // Android specific
         if (Application.platform == RuntimePlatform.Android)
