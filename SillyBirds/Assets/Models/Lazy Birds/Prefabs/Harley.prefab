@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb54e0418f0c4143b721c9ba20b994d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 4
 --- !u!114 &114828613957609524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,6 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
   _particleColor: {r: 0.8664808, g: 0.25735292, b: 0.875, a: 0}
+  _explodeSound: {fileID: 8300000, guid: cf8d86ff1d6672c40836e396636375c3, type: 3}
 --- !u!135 &135635454924056210
 SphereCollider:
   m_ObjectHideFlags: 1
