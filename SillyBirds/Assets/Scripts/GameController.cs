@@ -2,29 +2,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Responsible for the general controlling of the game
 /// </summary>
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
+    // public vars
+    public Text _scoreText;
+
+    private int _score;
     private bool _gameRunning;
-    private const float BIRD_SPAWN_MIN_Y_POS = -3.9f;
-    private const float BIRD_SPAWN_MAX_Y_POS = 3.7f;
+    private const float BIRD_SPAWN_MIN_Y_POS = -10f;
+    private const float BIRD_SPAWN_MAX_Y_POS = 10f;
     private const float BIRD_SPAWN_MIN_X_POS = -20f;
     private const float BIRD_SPAWN_MAX_X_POS = 20f;
 
     // some defaults spawn positions
-    private float _spawnPositionX = 0f;        
-    private float _spawnPositionY = 0f;        
+    private float _spawnPositionX = 0f;
+    private float _spawnPositionY = 0f;
     private float _spawnPositionZ = -40f;       // set the z-order so we know exactly how far from the camera they should be
 
     // Use this for initialization
-    void Start () {
-
+    void Start()
+    {
         _gameRunning = true;
         StartCoroutine(SpawnBirds());
-	}
+        StartCoroutine(DisplayScore(0.5f));
+
+    }
+
+    private IEnumerator DisplayScore(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _score = 0;
+        _scoreText.gameObject.SetActive(true);
+        UpdateScore();
+    }
+
+    /// <summary>
+    /// Updates the displayed score
+    /// </summary>
+    private void UpdateScore()
+    {
+        if (_gameRunning)
+        {
+            _scoreText.text = "Score: " + _score;
+        }
+    }
+
+    /// <summary>
+    /// Increases the score
+    /// </summary>
+    private void AddScore()
+    {
+        if (_gameRunning)
+        {
+            _score++;
+
+            // update displayed text
+            UpdateScore();
+        }
+    }
 
     /// <summary>
     /// Spawns Birdies using the ObjectPooler
@@ -97,5 +138,47 @@ public class GameController : MonoBehaviour {
         }
         return new Vector3(randomBirdXPos, randomBirdYPos, _spawnPositionZ);
     }
-	
+
+
+    private void Update()
+    {
+        // Android specific
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.rigidbody != null)
+                    {
+                        Console.Write("");
+                        Destroy(hit.rigidbody.gameObject);
+                        AddScore();
+                    }
+                }
+            }
+        }
+        else
+        {
+            // Windows/Unity Editor specific
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.rigidbody != null)
+                    {
+                        Console.Write("");
+                        hit.rigidbody.gameObject.SetActive(false);
+                        AddScore();
+                    }
+                }
+            }
+        }
+
+    }
+
 }
