@@ -128,9 +128,9 @@ GameObject:
   - component: {fileID: 114177065877352888}
   - component: {fileID: 95763963469657326}
   - component: {fileID: 114742668228439750}
-  - component: {fileID: 114429015350926986}
   - component: {fileID: 135215501592474172}
   - component: {fileID: 54270240267250082}
+  - component: {fileID: 114729951044686902}
   m_Layer: 0
   m_Name: J
   m_TagString: Bird
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _amplitude: 0.05
   _speed: 5
---- !u!114 &114429015350926986
+--- !u!114 &114729951044686902
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -302,9 +302,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936123042467916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.9411765, g: 0.81202716, b: 0.08996537, a: 0}
 --- !u!114 &114742668228439750
 MonoBehaviour:
   m_ObjectHideFlags: 1

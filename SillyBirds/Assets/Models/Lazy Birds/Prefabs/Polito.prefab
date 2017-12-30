@@ -37,9 +37,9 @@ GameObject:
   - component: {fileID: 114135909190755080}
   - component: {fileID: 95227286487952918}
   - component: {fileID: 114721224142800890}
-  - component: {fileID: 114128898921601900}
   - component: {fileID: 135587970158779300}
   - component: {fileID: 54127501838118248}
+  - component: {fileID: 114827946353409118}
   m_Layer: 0
   m_Name: Polito
   m_TagString: Bird
@@ -281,17 +281,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114128898921601900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1085749297350262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114135909190755080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,6 +306,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+--- !u!114 &114827946353409118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1085749297350262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.8690133, g: 0.9411765, b: 0.19377165, a: 0}
 --- !u!135 &135587970158779300
 SphereCollider:
   m_ObjectHideFlags: 1

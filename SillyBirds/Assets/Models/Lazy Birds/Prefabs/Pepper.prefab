@@ -82,9 +82,9 @@ GameObject:
   - component: {fileID: 114386111950966810}
   - component: {fileID: 95001824616147232}
   - component: {fileID: 114259838977497974}
-  - component: {fileID: 114858177378482058}
   - component: {fileID: 136106626207176676}
   - component: {fileID: 54664848855929814}
+  - component: {fileID: 114096268374964342}
   m_Layer: 0
   m_Name: Pepper
   m_TagString: Bird
@@ -281,6 +281,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114096268374964342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584920402250918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.6429945, g: 0.14630188, b: 0.9044118, a: 0}
 --- !u!114 &114259838977497974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,17 +319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _amplitude: 0.05
   _speed: 5
---- !u!114 &114858177378482058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1584920402250918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &136106626207176676
 CapsuleCollider:
   m_ObjectHideFlags: 1

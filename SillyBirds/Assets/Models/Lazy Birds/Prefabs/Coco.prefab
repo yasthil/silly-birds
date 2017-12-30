@@ -52,9 +52,9 @@ GameObject:
   - component: {fileID: 114965947574740688}
   - component: {fileID: 95803485298008796}
   - component: {fileID: 114235852782211266}
-  - component: {fileID: 114742172459792552}
   - component: {fileID: 135958981072707310}
   - component: {fileID: 54325459776165640}
+  - component: {fileID: 114952978092947720}
   m_Layer: 0
   m_Name: Coco
   m_TagString: Bird
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
---- !u!114 &114742172459792552
+--- !u!114 &114952978092947720
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -301,9 +301,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1305410896935532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.13440742, g: 0.6579645, b: 0.8308824, a: 0}
 --- !u!114 &114965947574740688
 MonoBehaviour:
   m_ObjectHideFlags: 1

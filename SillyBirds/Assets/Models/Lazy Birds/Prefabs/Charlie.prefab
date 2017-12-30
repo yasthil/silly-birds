@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 114605916320358980}
   - component: {fileID: 95140827865101008}
   - component: {fileID: 114990934269966672}
-  - component: {fileID: 114766519939456168}
   - component: {fileID: 135735678826441026}
   - component: {fileID: 54764541868230078}
+  - component: {fileID: 114625793258209294}
   m_Layer: 0
   m_Name: Charlie
   m_TagString: Bird
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _amplitude: 0.05
   _speed: 5
---- !u!114 &114766519939456168
+--- !u!114 &114625793258209294
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -244,9 +244,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1200658626674364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.064230114, g: 0.09946613, b: 0.7941176, a: 0}
 --- !u!114 &114990934269966672
 MonoBehaviour:
   m_ObjectHideFlags: 1

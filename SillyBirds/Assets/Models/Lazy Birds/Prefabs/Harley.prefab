@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 114445657937018424}
   - component: {fileID: 95269879776215192}
   - component: {fileID: 114515881602254708}
-  - component: {fileID: 114480295937543590}
   - component: {fileID: 135635454924056210}
   - component: {fileID: 54813696633461380}
+  - component: {fileID: 114828613957609524}
   m_Layer: 0
-  m_Name: 'Harley '
+  m_Name: Harley
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,17 +294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _amplitude: 0.05
   _speed: 5
---- !u!114 &114480295937543590
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1005596225482618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114515881602254708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,6 +306,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+--- !u!114 &114828613957609524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005596225482618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.8664808, g: 0.25735292, b: 0.875, a: 0}
 --- !u!135 &135635454924056210
 SphereCollider:
   m_ObjectHideFlags: 1

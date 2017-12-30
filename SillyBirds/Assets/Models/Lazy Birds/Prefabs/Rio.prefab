@@ -113,9 +113,9 @@ GameObject:
   - component: {fileID: 114967935049062228}
   - component: {fileID: 95796128693275080}
   - component: {fileID: 114084408377987744}
-  - component: {fileID: 114507593390512402}
   - component: {fileID: 135816454803810932}
   - component: {fileID: 54142312159052364}
+  - component: {fileID: 114172869482875940}
   m_Layer: 0
   m_Name: Rio
   m_TagString: Bird
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
---- !u!114 &114507593390512402
+--- !u!114 &114172869482875940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -301,9 +301,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848137776097506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26fef2822b40974db1547a0ec52b9dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 520fd69c889d09a4fbbbaae4e8b3ea47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosion: {fileID: 1872403282680486, guid: 6f18a2791af87f4469a04aaae3b01168, type: 2}
+  _particleColor: {r: 0.28579518, g: 0.9558824, b: 0.19679932, a: 0}
 --- !u!114 &114967935049062228
 MonoBehaviour:
   m_ObjectHideFlags: 1
