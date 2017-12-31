@@ -5,7 +5,8 @@ A simple, funny game built with Unity
 
 ## Instructions:
 ### Windows:
-* You will need to copy the "SillyBirds.zip" from the ../GameBuild/Windows/ directory
+* You will need to copy the "SillyBirds.zip" from the ../GameBuild/Windows/ directory to a location on your PC
+* Extract the .zip file and run "SillyBirds.exe"
 
 ### Android:
 * You will need to copy the "SillyBirds.apk" from the ../GameBuild/Android/ directory to your phone's SD card or on-board storage
