@@ -1,7 +1,7 @@
 # silly-birds
 A simple, funny game built with Unity
 
-#![Alt Text](https://github.com/yasthil/XamarinFirebaseAuth/blob/develop/XamarinFirebaseAuth/Misc/XamarinFirebaseAuthScreenGrab.gif)
+![Alt Text](https://github.com/yasthil/silly-birds/blob/master/SillyBirds/Misc/SillyBirds_Android_Demo.gif)
 
 ## Instructions:
 ### Windows:
