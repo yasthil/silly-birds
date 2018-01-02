@@ -14,5 +14,6 @@ A simple, funny game built with Unity
 
 ### Notes:
 * I have removed the paid assets from this repo as it's not allowed to publicly distribute assets which were purchased from the Unity Asset Store. Hence, this project will not work if you clone it and open it with Unity. 
+* If you do clone the repo, all you have to do is replace the references where the models were used with models of your own.
 * The Android and Windows builds will work without needing to have Unity installed on your Android device or PC
 
