@@ -11,3 +11,8 @@ A simple, funny game built with Unity
 ### Android:
 * You will need to copy the "SillyBirds.apk" from the ../GameBuild/Android/ directory to your phone's SD card or on-board storage
 * Navigate to where you stored "SillyBirds.apk" on your device and install it (you might need allow Android to install apps from external sources)
+
+### Notes:
+* I have removed the paid assets from this repo as it's not allowed to publicly distribute assets which were purchased from the Unity Asset Store. Hence, this project will not work if you clone it and open it with Unity. 
+* The Android and Windows builds will work without needing to have Unity installed on your Android device or PC
+
